@@ -72,30 +72,19 @@ The backend is deployed on Render and handles /send-email POST requests via an E
 
 🧪 Running Locally
 1. Clone the Repo
-bash
-Copy
-Edit
-git clone https://github.com/ritik-kumar123/portfolio.git
-cd portfolio
+  `git clone https://github.com/ritik-kumar123/portfolio.git`
+   cd portfolio
+
 2. Install Dependencies
-bash
-Copy
-Edit
-npm install
+    npm install
+   
 3. Start Frontend
-bash
-Copy
-Edit
-npm start
+     npm start
+   
 4. Backend (Optional if you want to test locally)
-Create a separate folder backend/
-
-Add your Express server and routes (like /send-email)
-
-Use .env for secure configs (e.g. SMTP credentials)
-
-📸 Screenshots
-Homepage	Contact Form
+    . Create a separate folder backend
+    . Add your Express server and routes (like /send-email)
+    . Use .env for secure configs (e.g. SMTP credentials)
 
 📎 Links
 ## 💻 GitHub Profile  
