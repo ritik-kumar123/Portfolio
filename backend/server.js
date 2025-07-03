@@ -7,7 +7,11 @@ const sendMail = require("./utils/sendMail");
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://hbhvkhk.netlify.app"], // ✅ your frontend URL
+  methods: ["POST"],
+}));
+
 app.use(express.json());
 
 // POST route to send email
