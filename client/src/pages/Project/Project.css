@@ -1,0 +1,165 @@
+.project {
+    padding-left: 150px;
+    margin-top: 60px;
+}
+
+.project h2 {
+    color: #138781;
+    font-weight: bold;
+    text-align: left;
+}
+
+.project hr {
+    color: #138781;
+    width: 400px;
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+#ads {
+    margin: 30px 0;
+}
+
+#ads .card-notify-badge {
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    background-color: #f29f67;
+    color: black;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.card-notify-badge {
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    background-color: #f29f67;
+    color: black;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card-details-badge {
+    background-color: #e0b50f;
+    text-align: center;
+    border-radius: 30px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.card-image-overlay {
+    font-size: 20px;
+}
+
+.card-image-overlay span {
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.card:hover {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 12px 15px 20px 0px rgba(45, 61, 73, 0.15);
+    transition: all 0.3s ease;
+}
+
+.ad-btn {
+    text-transform: uppercase;
+    display: block;
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    background-color: #138781;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    margin: 20px auto;
+    line-height: 35px;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 1s ease;
+}
+
+.ad-btn:hover {
+    background-color: white;
+    color: #138781;
+    border: 2px solid #138781;
+    box-shadow: 12px 15px 20px 0px rgba(45, 61, 73, 0.15);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .project {
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+
+    .project hr {
+        width: 90%;
+    }
+
+    .card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 40px;
+    }
+
+    .project h2 {
+        text-align: center;
+    }
+
+    .project hr {
+        width: 90%;
+    }
+
+    .card img {
+        height: 160px;
+    }
+    .card
+    {
+        margin-bottom: 20px;
+    }
+
+    .ad-btn {
+        width: 100px;
+        height: 36px;
+        font-size: 14px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card img {
+        height: 140px;
+    }
+    .card
+    {
+        margin-bottom: 20px;
+    }
+
+    .ad-btn {
+        width: 90px;
+        font-size: 12px;
+    }
+}

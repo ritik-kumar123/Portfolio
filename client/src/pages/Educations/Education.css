@@ -1,0 +1,75 @@
+.education {
+    padding-left: 150px;
+    margin-top: 60px;
+}
+
+/* Heading */
+.education h2 {
+    color: #138781;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Horizontal line under heading */
+.education hr {
+    color: #138781;
+    width: 400px;
+    margin: 10px 0;
+}
+
+/* Timeline text styles */
+.education .vertical-timeline-element-title {
+    color: #138781;
+}
+
+.education .vertical-timeline-element-subtitle {
+    color: #1e1e2e;
+}
+
+/* Vertical line of the timeline */
+.vertical-timeline::before {
+    background: #138781;
+}
+
+/* =================== Responsive Fix =================== */
+@media (max-width: 768px) {
+    .education {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 40px;
+    }
+
+    .education h2 {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .education hr {
+        width: 60%;
+        margin: 10px auto;
+    }
+
+    .education .vertical-timeline-element-title,
+    .education .vertical-timeline-element-subtitle {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .education {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 20px;
+        word-wrap: break-word;
+        
+    }
+
+    .education h2 {
+        /* margin-left: 0px; */
+        font-size: 1.5rem;
+    }
+
+    .education hr {
+        width: 80%;
+    }
+}

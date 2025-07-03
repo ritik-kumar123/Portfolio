@@ -1,0 +1,46 @@
+.sidebar-section {
+    display: flex;
+    background-color: black;
+}
+
+.sidebar {
+    width: 90px;
+    background-color: #1e1e2c;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.sidebar-toggle {
+    width: 230px;
+}
+
+.sidebar-toggle-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.sidebar-toggle-icons p svg {
+    color: white;
+    font-size: 20px;
+    background-color: #f29f67;
+    margin-top: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* ✅ Force small sidebar on small screens and hide toggle icon */
+
+@media (max-width: 768px) {
+     .sidebar
+     {
+        display: none;
+     }
+}

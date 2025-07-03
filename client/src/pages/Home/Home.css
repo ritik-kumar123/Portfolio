@@ -1,0 +1,125 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.home-container {
+    height: 300px;
+    color: white;
+    margin-left: 10px;
+    flex: 1;
+}
+
+.profile {
+    height: 150px;
+    width: 150px;
+    border-radius: 90px;
+    margin-top: 90px;
+    object-fit: cover;
+}
+
+/* Typography Styling */
+.home-content h2 {
+    padding: 5px;
+    padding-top: 80px;
+}
+
+.home-content h1 {
+    color: yellow;
+    padding: 5px;
+}
+
+/* Buttons Styling */
+.home-buttons {
+    padding: 5px;
+}
+
+.home-buttons .btn-hire {
+    background-color: #3b8ff3;
+    color: white;
+    width: 130px;
+    transition: 0.5s;
+}
+
+.home-buttons .btn-hire:hover {
+    background-color: white;
+    color: #3b8ff3;
+    width: 160px;
+    transition: 1s;
+}
+
+.home-buttons .btn-cv {
+    background-color: #f29f67;
+    color: white;
+    margin-left: 15px;
+    transition: 1s;
+}
+
+.home-buttons .btn-cv:hover {
+    opacity: 70%;
+    transition: 1s;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 10px;
+    }
+
+    .profile {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .home-container {
+        margin-left: 0;
+        height: auto;
+    }
+
+    .home-content h2 {
+        padding-top: 20px;
+        font-size: 1.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .home-buttons .btn-hire,
+    .home-buttons .btn-cv {
+        width: 80%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile {
+        height: 120px;
+        width: 120px;
+    }
+    body
+    {
+        overflow-x: hidden;
+    }
+
+    .home-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .home-content h1 {
+        font-size: 1.5rem;
+    }
+}

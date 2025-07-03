@@ -1,0 +1,82 @@
+.techstack {
+    padding-left: 150px;
+    padding-right: 20px;
+    margin-top: 60px;
+}
+
+.techstack h2 {
+    color: #138781;
+    font-weight: bold;
+    text-align: center;
+}
+
+.techstack hr {
+    color: #138781;
+    width: 50%;
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+/* Grid layout for cards */
+.techstack .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.techstack .card {
+    cursor: pointer;
+    transition: 1s;
+    padding: 20px;
+    min-width: 180px;
+    max-width: 250px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    color: #4b5563;
+    transition: 1s;
+    margin-bottom: 10px;
+}
+
+.techstack .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: #138781;
+    color: white;
+    border: none;
+}
+
+.techstack .card:hover .tech-icon {
+    color: white;
+}
+
+/* ✅ Responsive styles */
+ @media (max-width: 768px) {
+    .techstack {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 40px;
+    }
+
+    .techstack hr {
+        width: 80%;
+    }
+  
+
+    .tech-icon {
+        font-size: 2.5rem;
+    }
+
+    .techstack .card {
+        width: 100%;
+        max-width: 90%;
+    }
+} 
