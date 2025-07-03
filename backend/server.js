@@ -8,9 +8,10 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: ["https://hbhvkhk.netlify.app"], // ✅ your frontend URL
+  origin: ["https://portfolio-ar-ritik.netlify.app"],
   methods: ["POST"],
 }));
+
 
 app.use(express.json());
 
