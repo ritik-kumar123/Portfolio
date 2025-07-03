@@ -1,23 +1,20 @@
-import React, { useState, useLayoutEffect, useRef } from 'react' // ✅ useState added for form handling
+import React, { useState, useLayoutEffect, useRef } from 'react'
 import './Contact.css'
-import { BsFacebook, BsGithub, BsLinkedin } from 'react-icons/bs'
+import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const Contact = () => 
-{
+const Contact = () => {
   const contactRef = useRef(null)
 
-  // ✅ Form state to hold user inputs
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     msg: '',
   })
 
-  // ✅ Updates form data on input change
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -25,9 +22,8 @@ const Contact = () =>
     }))
   }
 
-  // ✅ Submit form to backend using fetch()
   const handleSubmit = async (e) => {
-    e.preventDefault() // prevent page reload
+    e.preventDefault()
 
     try {
       const res = await fetch('https://portfolio-backend-pmoi.onrender.com/send-email', {
@@ -35,18 +31,17 @@ const Contact = () =>
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData), // send form data
+        body: JSON.stringify(formData),
       })
 
       const data = await res.json()
-      alert(data.message) // show success or failure message
+      alert(data.message)
     } catch (error) {
       console.error('Email send error:', error)
       alert('Failed to send email.')
     }
   }
 
-  // 🌀 GSAP animation
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from('.card1', {
@@ -100,9 +95,31 @@ const Contact = () =>
           <div className="col-md-6 col-lg-6 col-xl-6 col-sm-12">
             <div className="card2 d-flex card border-0 px-4 py-5">
               <h6 className="mb-4 text-center">
-                CONTACT WITH <BsLinkedin className="ms-2" color="blue" size={30} />
-                <BsGithub className="ms-2" color="blue" size={30} />
-                <BsFacebook className="ms-2" color="blue" size={30} />
+                CONTACT WITH
+                <a
+                  href="https://www.linkedin.com/in/ritik-kumar123" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ms-2"
+                >
+                  <BsLinkedin color="blue" size={30} />
+                </a>
+                <a
+                  href="https://github.com/ritik-kumar123" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ms-2"
+                >
+                  <BsGithub color="blue" size={30} />
+                </a>
+                <a
+                  href="https://www.instagram.com/ritik_thakur_73"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ms-2"
+                >
+                  <BsInstagram color="blue" size={30} />
+                </a>
               </h6>
 
               {/* Divider */}
@@ -114,9 +131,8 @@ const Contact = () =>
                 <div className="col line"></div>
               </div>
 
-              {/* ✅ Contact Form with state + onSubmit */}
+              {/* ✅ Contact Form */}
               <form onSubmit={handleSubmit} className="w-100">
-                {/* Name Field */}
                 <div className="row px-3 mb-3">
                   <input
                     type="text"
@@ -129,7 +145,6 @@ const Contact = () =>
                   />
                 </div>
 
-                {/* Email Field */}
                 <div className="row px-3 mb-3">
                   <input
                     type="email"
@@ -142,7 +157,6 @@ const Contact = () =>
                   />
                 </div>
 
-                {/* Message Field */}
                 <div className="row px-3 mb-3">
                   <textarea
                     name="msg"
@@ -155,7 +169,6 @@ const Contact = () =>
                   />
                 </div>
 
-                {/* Submit Button */}
                 <div className="row px-3">
                   <button type="submit" className="btn btn-secondary">
                     SEND MESSAGE
