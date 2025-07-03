@@ -30,7 +30,7 @@ const Contact = () =>
     e.preventDefault() // prevent page reload
 
     try {
-      const res = await fetch('http://localhost:3000/send-email', {
+      const res = await fetch('https://portfolio-backend-pmoi.onrender.com/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
