@@ -3,6 +3,7 @@ import "./Home.css";
 import Typewriter from "typewriter-effect";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Swal from "sweetalert2";
 
 const Home = ({ toggle }) => {
   useGSAP(() => {
@@ -80,13 +81,27 @@ const Home = ({ toggle }) => {
             </h1>
             <div className="home-buttons">
               <button className="btn btn-hire">Hire Me</button>
-              <a
+              <button
                 className="btn btn-cv"
-                href="/resume.pdf"
-                download="Resume.pdf"
+                onClick={() => {
+                  Swal.fire({
+                    title: "Download Resume?",
+                    text: "Would you like to download the PDF resume?",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, download",
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      const link = document.createElement("a");
+                      link.href = "/resume.pdf";
+                      link.download = "Resume.pdf";
+                      link.click();
+                    }
+                  });
+                }}
               >
                 My Resume
-              </a>
+              </button>
             </div>
           </div>
         </div>
