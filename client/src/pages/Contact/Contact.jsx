@@ -30,7 +30,7 @@ const Contact = () => {
 
     try {
       const res = await fetch(
-        "http://portfolio-backend-pmoi.onrender.com/send-email",
+        "https://portfolio-backend-pmoi.onrender.com/send-email",
         {
           method: "POST",
           headers: {
