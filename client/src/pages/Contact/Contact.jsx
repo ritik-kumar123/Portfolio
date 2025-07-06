@@ -1,79 +1,88 @@
-import React, { useState, useLayoutEffect, useRef } from 'react'
-import './Contact.css'
-import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useState, useLayoutEffect, useRef } from "react"; // ✅ useState added for form handling
+import "./Contact.css";
+import { BsInstagram, BsGithub, BsLinkedin } from "react-icons/bs";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  const contactRef = useRef(null)
+  const contactRef = useRef(null);
 
+  // ✅ Form state to hold user inputs
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    msg: '',
-  })
+    name: "",
+    email: "",
+    msg: "",
+  });
 
+  // ✅ Updates form data on input change
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
+  // ✅ Submit form to backend using fetch()
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault(); // prevent page reload
 
     try {
-      const res = await fetch('https://portfolio-backend-pmoi.onrender.com/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      const res = await fetch(
+        "http://portfolio-backend-pmoi.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData), // send form data
+        }
+      );
 
-      const data = await res.json()
-      alert(data.message)
+      const data = await res.json();
+      alert(data.message); // show success or failure message
     } catch (error) {
-      console.error('Email send error:', error)
-      alert('Failed to send email.')
+      console.error("Email send error:", error);
+      alert("Failed to send email.");
     }
-  }
+  };
 
+  // 🌀 GSAP animation
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.card1', {
+      gsap.from(".card1", {
         x: -100,
         opacity: 0,
         duration: 1,
         scrollTrigger: {
-          trigger: '.card1',
-          start: 'top 80%',
-          toggleActions: 'play none none none',
+          trigger: ".card1",
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
-      })
+      });
 
-      gsap.from('.card2', {
+      gsap.from(".card2", {
         x: 100,
         opacity: 0,
         duration: 1,
         delay: 0.2,
         scrollTrigger: {
-          trigger: '.card2',
-          start: 'top 80%',
-          toggleActions: 'play none none none',
+          trigger: ".card2",
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
-      })
-    }, contactRef)
+      });
+    }, contactRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="contact mb-5" id="contactpage" ref={contactRef}>
-      <h2 className="col-12 mt-3 mb-1 text-center text-uppercase main-heading">Contact</h2>
+      <h2 className="col-12 mt-3 mb-1 text-center text-uppercase main-heading">
+        Contact
+      </h2>
       <hr />
 
       <div className="card card0 border-0">
@@ -97,7 +106,7 @@ const Contact = () => {
               <h6 className="mb-4 text-center">
                 CONTACT WITH
                 <a
-                  href="https://www.linkedin.com/in/ritik-kumar123" 
+                  href="https://www.linkedin.com/in/ritik-kumar123"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ms-2"
@@ -105,7 +114,7 @@ const Contact = () => {
                   <BsLinkedin color="blue" size={30} />
                 </a>
                 <a
-                  href="https://github.com/ritik-kumar123" 
+                  href="https://github.com/ritik-kumar123"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ms-2"
@@ -131,8 +140,9 @@ const Contact = () => {
                 <div className="col line"></div>
               </div>
 
-              {/* ✅ Contact Form */}
+              {/* ✅ Contact Form with state + onSubmit */}
               <form onSubmit={handleSubmit} className="w-100">
+                {/* Name Field */}
                 <div className="row px-3 mb-3">
                   <input
                     type="text"
@@ -145,6 +155,7 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Email Field */}
                 <div className="row px-3 mb-3">
                   <input
                     type="email"
@@ -157,6 +168,7 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Message Field */}
                 <div className="row px-3 mb-3">
                   <textarea
                     name="msg"
@@ -169,6 +181,7 @@ const Contact = () => {
                   />
                 </div>
 
+                {/* Submit Button */}
                 <div className="row px-3">
                   <button type="submit" className="btn btn-secondary">
                     SEND MESSAGE
@@ -181,7 +194,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

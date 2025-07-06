@@ -3,6 +3,8 @@
     padding-right: 30px;
     margin-bottom: 60px;
     padding-top: 50px;
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    ;
 }
 
 .contact .main-heading {
@@ -12,7 +14,11 @@
 }
 
 .contact hr {
-    color: #138781;
+    background-color: #138781;
+    margin-bottom: 60px;
+    opacity: 1;
+    border: none;
+    height: 2px;
     width: 400px;
     max-width: 80%;
     margin: 10px auto;
@@ -46,14 +52,6 @@
     margin: 20px 0;
 }
 
-/* Responsive Design */
-/* @media (max-width: 1200px) {
-    .contact
-    {
-
-    } */
-    
-/* } */
 @media (max-width: 992px) {
     .contact {
         padding-left: 50px;

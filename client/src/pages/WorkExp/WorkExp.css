@@ -1,63 +1,113 @@
+:root {
+    --work-accent: #138781;
+    --work-bg: linear-gradient(to right, #fdfbfb, #ebedee);
+    --work-dark: #1e1e2e;
+}
+
 .work {
-    padding-left: 150px;
-    margin-top: 60px;
-    height: 20vh;
+    padding: 30px 150px 20px 150px;
+    background: var(--work-bg);
 }
 
 .work .main-heading {
-    color: #138781;
+    color: var(--work-accent);
     font-weight: bold;
     text-align: left;
+    font-size: 2.5rem;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .work hr {
-    color: #138781;
-    width: 400px;
-    margin: 10px auto;
+    background-color: var(--work-accent);
+    opacity: 1;
+    height: 3px;
+    border: none;
+    width: 60%;
+    margin: 10px auto 30px auto;
+    border-radius: 2px;
 }
 
 .work .heading {
     display: flex;
     align-items: center;
-    margin-left: 10px;
     font-size: 24px;
+    margin-left: 10px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .work .dot {
-    margin-bottom: 30px;
-    margin-right: 10px;
     font-weight: bold;
     font-size: 40px;
+    margin-right: 10px;
+    margin-bottom: 30px;
 }
 
-/* ✅ Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
+/* ====================== Responsive ====================== */
+
+@media (max-width: 992px) {
     .work {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 40px;
+        padding: 50px 60px 20px 60px;
     }
 
     .work .main-heading {
+        font-size: 2rem;
         text-align: center;
-        font-size: 22px;
     }
 
-    .work hr {
-        width: 80%;
-        margin: 10px auto;
+    .work .heading {
+        font-size: 20px;
+    }
+
+    .work .dot {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work {
+        padding: 40px 20px;
+    }
+
+    .work .main-heading {
+        font-size: 1.8rem;
     }
 
     .work .heading {
         flex-direction: column;
         align-items: flex-start;
-        font-size: 20px;
+        font-size: 18px;
         margin-left: 0;
     }
 
     .work .dot {
-        font-size: 30px;
+        font-size: 28px;
         margin-right: 0;
         margin-bottom: 10px;
+    }
+
+    .work hr {
+        width: 80%;
+        height: 2px;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .work .main-heading {
+        font-size: 1.5rem;
+    }
+
+    .work hr {
+        width: 80%;
+    }
+
+    .work .heading {
+        font-size: 16px;
+    }
+
+    .work .dot {
+        font-size: 24px;
     }
 }

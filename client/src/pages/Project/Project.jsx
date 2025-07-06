@@ -84,9 +84,7 @@ const ProjectCard = ({ project }) => {
 const Project = () => {
   return (
     <div className="container project" id="projectpage">
-      <h2 className="text-center text-uppercase mt-3 mb-1">
-        Top Recent Projects
-      </h2>
+      <h2 className="text-center text-uppercase  mb-1">Top Recent Projects</h2>
       <hr />
       <p className="text-center pb-3">
         👉 Including languages, frameworks, databases, and tools

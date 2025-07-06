@@ -1,23 +1,32 @@
 .project {
-    padding-left: 150px;
-    margin-top: 60px;
+    padding: 60px 150px;
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
 }
 
 .project h2 {
     color: #138781;
-    font-weight: bold;
-    text-align: left;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .project hr {
-    color: #138781;
-    width: 400px;
-    max-width: 80%;
+    background-color: #138781;
+    border: none;
+    width: 60%;
     margin: 10px auto;
+    opacity: 1;
+    height: 2px;
+    border-radius: 2px;
+
 }
 
 #ads {
     margin: 30px 0;
+}
+
+.card {
+    position: relative;
 }
 
 #ads .card-notify-badge {
@@ -33,11 +42,26 @@
     font-weight: bold;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
 .card img {
     width: 100%;
     height: 200px;
-    background-size: 100% 100%;
+    object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
 }
 
 .card-notify-badge {
@@ -51,7 +75,16 @@
     border-radius: 30px;
     font-size: 14px;
     font-weight: bold;
+    transition: transform 0.3s ease;
+    z-index: 2;
 }
+
+.card:hover .card-notify-badge {
+    display: none;
+}
+
+
+
 
 .card-details-badge {
     background-color: #e0b50f;
@@ -136,8 +169,8 @@
     .card img {
         height: 160px;
     }
-    .card
-    {
+
+    .card {
         margin-bottom: 20px;
     }
 
@@ -153,8 +186,8 @@
     .card img {
         height: 140px;
     }
-    .card
-    {
+
+    .card {
         margin-bottom: 20px;
     }
 

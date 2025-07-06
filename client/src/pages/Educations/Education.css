@@ -1,75 +1,74 @@
+:root {
+    --edu-accent: #138781;
+    --edu-bg: linear-gradient(to right, #fdfbfb, #ebedee);
+    --edu-dark: #1e1e2e;
+}
+
 .education {
-    padding-left: 150px;
-    margin-top: 60px;
+    padding: 60px 20px;
+    background: var(--edu-bg);
 }
 
-/* Heading */
-.education h2 {
-    color: #138781;
-    font-weight: bold;
-    text-align: left;
+.edu-header {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Horizontal line under heading */
-.education hr {
-    color: #138781;
-    width: 400px;
-    margin: 10px 0;
+.edu-header h2 {
+    font-size: 2.5rem;
+    color: var(--edu-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
-/* Timeline text styles */
-.education .vertical-timeline-element-title {
-    color: #138781;
+.edu-underline {
+    width: 50%;
+    height: 2px;
+    background-color: var(--edu-accent);
+    margin: 10px auto 30px;
+    border: none;
+    opacity: 1;
+    border-radius: 2px;
 }
 
-.education .vertical-timeline-element-subtitle {
-    color: #1e1e2e;
-}
-
-/* Vertical line of the timeline */
+/* Timeline line color */
 .vertical-timeline::before {
-    background: #138781;
+    background: var(--edu-accent);
 }
 
-/* =================== Responsive Fix =================== */
+/* Timeline titles */
+.vertical-timeline-element-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--edu-accent);
+    margin-bottom: 5px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.vertical-timeline-element-subtitle {
+    font-size: 1rem;
+    color: var(--edu-dark);
+    font-weight: 500;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .education {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-top: 40px;
+    .edu-header h2 {
+        font-size: 2rem;
     }
 
-    .education h2 {
-        text-align: center;
-        font-size: 1.8rem;
-    }
-
-    .education hr {
-        width: 60%;
-        margin: 10px auto;
-    }
-
-    .education .vertical-timeline-element-title,
-    .education .vertical-timeline-element-subtitle {
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .education {
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-left: 20px;
-        word-wrap: break-word;
-        
-    }
-
-    .education h2 {
-        /* margin-left: 0px; */
-        font-size: 1.5rem;
-    }
-
-    .education hr {
+    .edu-underline {
         width: 80%;
+    }
+
+    .vertical-timeline-element-title,
+    .vertical-timeline-element-subtitle {
+        text-align: center;
     }
 }

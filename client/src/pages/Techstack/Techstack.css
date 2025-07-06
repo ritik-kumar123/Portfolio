@@ -1,23 +1,40 @@
+:root {
+    --tech-accent: #138781;
+    --tech-bg: linear-gradient(to right, #fdfbfb, #ebedee);
+    --tech-dark: #1e1e2e;
+}
+
 .techstack {
-    padding-left: 150px;
-    padding-right: 20px;
-    margin-top: 60px;
+    padding: 0px 20px 60px 20px;
+    background: var(--tech-bg);
 }
 
 .techstack h2 {
-    color: #138781;
-    font-weight: bold;
+    font-size: 2.5rem;
+    color: var(--tech-accent);
+    font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 .techstack hr {
-    color: #138781;
     width: 50%;
-    max-width: 400px;
-    margin: 10px auto;
+    height: 2px;
+    background-color: var(--tech-accent);
+    margin: 10px auto 30px;
+    border: none;
+    opacity: 1;
 }
 
-/* Grid layout for cards */
+.techstack p {
+    text-align: center;
+    color: var(--tech-dark);
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
 .techstack .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -27,49 +44,47 @@
 
 .techstack .card {
     cursor: pointer;
-    transition: 1s;
     padding: 20px;
     min-width: 180px;
     max-width: 250px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
 }
 
+/* Icon inside card */
 .tech-icon {
     font-size: 3rem;
     color: #4b5563;
-    transition: 1s;
+    transition: color 0.3s ease;
     margin-bottom: 10px;
 }
 
+/* Card hover effects */
 .techstack .card:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px,
-        rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px,
-        rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    background-color: #138781;
+    background-color: var(--tech-accent);
     color: white;
     border: none;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .techstack .card:hover .tech-icon {
     color: white;
 }
 
-/* ✅ Responsive styles */
- @media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 768px) {
     .techstack {
-        padding-left: 30px;
-        padding-right: 30px;
-        margin-top: 40px;
+        padding: 0px 20px 40px 20px;
     }
 
-    .techstack hr {
-        width: 80%;
+    .techstack h2 {
+        font-size: 2rem;
     }
-  
 
     .tech-icon {
         font-size: 2.5rem;
@@ -79,4 +94,8 @@
         width: 100%;
         max-width: 90%;
     }
-} 
+
+    .techstack hr {
+        width: 80%;
+    }
+}
