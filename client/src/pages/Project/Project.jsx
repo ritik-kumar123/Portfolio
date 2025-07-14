@@ -13,7 +13,7 @@ const projects = [
     link: "https://netfllixclone-by-ar-ritik-thakur.netlify.app/",
   },
   {
-    title: "💬VoqueChat - Real-Time Chat App",
+    title: "💬VoqueChat Chat App",
     image: "/project3.png",
     stack: [
       "HTML",
