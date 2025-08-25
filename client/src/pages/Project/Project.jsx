@@ -13,26 +13,24 @@ const projects = [
     link: "https://netfllixclone-by-ar-ritik-thakur.netlify.app/",
   },
   {
-    title: "💬VoqueChat Chat App",
+    title: "💬Talkie Chat App",
     image: "/project3.png",
     stack: [
-      "HTML",
-      "CSS",
-      "JAVASCRIPT",
-      "REACT",
-      "SOCKET.IO",
-      "NODEJS",
-      "MONGODB",
+      "MongoDB",
+      "Express",
+      "React",
+      "Node",
+      "Socket.Io",
     ],
-    badge: "Fullstack",
-    link: "https://voquechat.onrender.com/",
+    badge: "Full Stack",
+    link: "https://chat-app-1-d8ae.onrender.com/",
   },
   {
-    title: "Blog CMS App",
+    title: "LMS-Virtual Courses",
     image: "/project2.png",
-    stack: ["Node", "Express", "React", "MongoDB"],
+    stack: ["MongoDB","Express", "React","Node"],
     badge: "Full Stack",
-    link: "https://your-blog-link.netlify.app/",
+    link: "https://lms-project-1-5z2t.onrender.com/",
   },
 ];
 
@@ -61,7 +59,7 @@ const ProjectCard = ({ project }) => {
       <div className="card rounded">
         <div className="card-image">
           <span className="card-notify-badge">{project.badge}</span>
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={project.title} className="project-img" />
         </div>
 
         <div className="card-image-overlay mt-3 text-center">

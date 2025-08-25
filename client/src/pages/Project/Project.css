@@ -50,6 +50,7 @@
 .card-image {
     overflow: hidden;
     border-radius: 10px;
+    border-bottom: 3px solid #e0b50f;
 }
 
 .card img {
