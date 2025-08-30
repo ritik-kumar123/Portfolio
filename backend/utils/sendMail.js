@@ -13,8 +13,8 @@ const sendMail = async ({ name, email, msg }) => {
     });
 
     const mailOptions = {
-      from: `"${name}" <${email}>`, // shows sender's name and email
-      to: process.env.EMAIL_USER, // your receiving address
+      from: `"${name}" <${email}>`,
+      to: process.env.EMAIL_USER,
       subject: `New message from ${name}`,
       text: msg,
     };

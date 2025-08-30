@@ -1,22 +1,21 @@
-import React, { useState, useLayoutEffect, useRef } from "react"; // ✅ useState added for form handling
+import React, { useState, useLayoutEffect, useRef } from "react"; 
 import "./Contact.css";
 import { BsInstagram, BsGithub, BsLinkedin } from "react-icons/bs";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { toast } from "react-toastify";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const contactRef = useRef(null);
+  const[loader,setLoader]=useState(false);
 
-  // ✅ Form state to hold user inputs
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     msg: "",
   });
 
-  // ✅ Updates form data on input change
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -24,31 +23,37 @@ const Contact = () => {
     }));
   };
 
-  // ✅ Submit form to backend using fetch()
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // prevent page reload
+const handleSubmit = async (e) => {
+  setLoader(true);
+  e.preventDefault(); 
+  try {
+    const res = await fetch("https://portfolio-backend-pmoi.onrender.com/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-    try {
-      const res = await fetch(
-        "https://portfolio-backend-pmoi.onrender.com/send-email",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData), // send form data
-        }
-      );
+    const data = await res.json();
+    toast.success('Email sent successfully')
+    setLoader(false);
+    setFormData({
+      name: "",
+      email: "",
+      msg: "",
+    });
+  } catch (error) {
+    console.error("Email send error:", error);
+    toast.error("Email Failed Try Again")
+    setLoader(false);
+    setFormData({
+      name: "",
+      email: "",
+      msg: "",
+    });
+  } 
+};
 
-      const data = await res.json();
-      alert(data.message); // show success or failure message
-    } catch (error) {
-      console.error("Email send error:", error);
-      alert("Failed to send email.");
-    }
-  };
 
-  // 🌀 GSAP animation
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(".card1", {
@@ -140,7 +145,7 @@ const Contact = () => {
                 <div className="col line"></div>
               </div>
 
-              {/* ✅ Contact Form with state + onSubmit */}
+              {/* Contact Form with state + onSubmit */}
               <form onSubmit={handleSubmit} className="w-100">
                 {/* Name Field */}
                 <div className="row px-3 mb-3">
@@ -183,12 +188,11 @@ const Contact = () => {
 
                 {/* Submit Button */}
                 <div className="row px-3">
-                  <button type="submit" className="btn btn-secondary">
-                    SEND MESSAGE
+                  <button type="submit" className="btn btn-secondary" disabled={loader}>
+                    {loader ? "Sending..." : "Send"}
                   </button>
                 </div>
               </form>
-              {/* 🛑 End Form */}
             </div>
           </div>
         </div>
