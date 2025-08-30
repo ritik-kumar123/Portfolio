@@ -41,14 +41,12 @@
 .home-buttons .btn-hire {
     background-color: #3b8ff3;
     color: white;
-    width: 130px;
     transition: 0.5s;
 }
 
 .home-buttons .btn-hire:hover {
     background-color: white;
     color: #3b8ff3;
-    width: 130px;
     transition: 1s;
 }
 
