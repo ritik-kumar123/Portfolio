@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Typewriter from "typewriter-effect";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-scroll";
 import gsap from "gsap";
 
 const Home = ({ toggle }) => {
@@ -79,14 +80,10 @@ const Home = ({ toggle }) => {
               />
             </h1>
             <div className="home-buttons">
-              <button className="btn btn-hire">Hire Me</button>
-              <a
-                className="btn btn-cv"
-                href="/resume.pdf"
-                download="Resume.pdf"
-              >
+              <Link to="contactpage" smooth={true} duration={500} className="btn btn-hire"> Hire Me</Link>
+              <div className="btn btn-cv" onClick={() => window.open("/resume.pdf", "_blank")} download="Resume.pdf">
                 My Resume
-              </a>
+              </div>
             </div>
           </div>
         </div>
