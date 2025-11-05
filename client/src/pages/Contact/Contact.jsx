@@ -43,7 +43,7 @@ const handleSubmit = async (e) => {
     });
   } catch (error) {
     console.error("Email send error:", error);
-    toast.error("Email Failed Try Again")
+    toast.error(error?error:"Email Failed Try Again")
     setLoader(false);
     setFormData({
       name: "",

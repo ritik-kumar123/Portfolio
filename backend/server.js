@@ -5,8 +5,6 @@ const express = require("express");
 const cors = require("cors");
 const sendMail = require("./utils/sendMail");
 const contactLimiter = require("./middleware/rateLimiter");
-
-
 const app = express();
 app.use(
   cors({
@@ -15,7 +13,6 @@ app.use(
     ],
   })
 );
-
 
 app.use(express.json());
 
